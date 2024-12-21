@@ -1,0 +1,59 @@
+/* Grundläggande styling */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* Mörk bakgrund */
+  color: #fff; /* Vit text */
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsiv grid-layout för användarlistan */
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Automatiskt antal kolumner */
+  gap: 15px; /* Avstånd mellan korten */
+  width: 100%;
+  max-width: 1200px; /* Maximal bredd för listan */
+  padding: 0;
+  list-style-type: none; /* Ta bort punktlistor */
+  margin: 0;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #444; /* Mörkare bakgrund för varje kort */
+  border-radius: 8px; /* Rundade hörn */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Skugga för djup */
+  transition: transform 0.2s, box-shadow 0.2s; /* Animation vid hovring */
+  color: white; /* Textfärg */
+}
+
+/* Interaktiv effekt vid hovring */
+.user-list li:hover {
+  transform: scale(1.05); /* Förstora något */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsivitet för små skärmar */
+@media (max-width: 768px) {
+  .user-list {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Mindre kort på mindre skärmar */
+  }
+
+  body {
+      padding: 10px;
+  }
+}
